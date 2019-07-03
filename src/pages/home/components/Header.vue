@@ -15,51 +15,42 @@
 <!-- <style lang="stylus"  scoped> -->
 <style lang="stylus" scoped>
 	@import '~@/assets/styles/varibles.styl'
-	.header {
-		display: flex;
-		line-height: .86rem;
-		background: $bgColor;
-		color: #fff;
-	}
+	.header
+		display: flex
+		line-height: .86rem
+		background: $bgColor
+		color: #fff
 
-	.header-left {
-		width: .4rem;
-		float: left;
-	}
-	
-	.header-left .back-icon {
+	.header-left 
+		width: .4rem
+		float: left
+	 
+		.back-icon 
+			/*text-align: center;*/
+			font-size: .4rem
+			margin-left: .1rem
+
+	.header-input 
+		flex: 1
+		height: .64rem
+		line-height: .64rem
+		margin-top: .12rem
+		margin-left: .2rem
+		background: #fff
+		border-radius: .1rem
+		color: #ccc
+		.input-icon 
+				margin-left: .1rem
+				margin-right: .1rem
+
+	.header-right
+		width: 1.5rem
+		float: right
+		margin-left: 10px
 		/*text-align: center;*/
-		font-size: .4rem;
-		margin-left: .1rem;
-	}
-
-	.header-input {
-		flex: 1;
-		height: .64rem;
-		line-height: .64rem;
-		margin-top: .12rem;
-		margin-left: .2rem;
-		background: #fff;
-		border-radius: .1rem;
-		color: #ccc;
-	}
-
-	.header-input .input-icon {
-		margin-left: .1rem;
-		margin-right: .1rem;
-	}
-
-	.header-right {
-		width: 1.5rem;
-		float: right;
-		margin-left: 10px;
-		/*text-align: center;*/
-	}
-
-	.header-right .arrow-icon {
-		/*margin-left: -.05rem;*//*箭头往左移动*/
-		font-size: .25rem;
-	}
+		.arrow-icon
+			/*margin-left: -.05rem;*//*箭头往左移动*/
+			font-size: .25rem
 </style>
 
 <script>
