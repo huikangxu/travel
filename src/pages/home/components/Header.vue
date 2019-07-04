@@ -7,11 +7,20 @@
 			<span class="iconfont input-icon">&#xe635;</span>请输入城市/景点/游玩主题
 		</div>
 		<div class="header-right">
-			城市<span class="iconfont arrow-icon">&#xe63d;</span>
+			{{this.city}}<span class="iconfont arrow-icon">&#xe63d;</span>
 		</div>
 	</div>
 </template>
- 
+
+<script>
+export default {
+	name : 'HomeHeader',
+	props: {
+		city: String
+	}
+}
+</script>
+
 <!-- <style lang="stylus"  scoped> -->
 <style lang="stylus" scoped>
 	@import '~@/assets/styles/varibles.styl'
@@ -53,9 +62,4 @@
 			font-size: .25rem
 </style>
 
-<script>
-export default {
-	name : 'HomeHeader'
-}
-</script>
 
