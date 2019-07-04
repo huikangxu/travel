@@ -6,9 +6,11 @@
 		<div class="header-input">
 			<span class="iconfont input-icon">&#xe635;</span>请输入城市/景点/游玩主题
 		</div>
-		<div class="header-right">
-			{{this.city}}<span class="iconfont arrow-icon">&#xe63d;</span>
-		</div>
+		<router-link to="/city">
+			<div class="header-right">
+				{{this.city}}<span class="iconfont arrow-icon">&#xe63d;</span>
+			</div>
+		</router-link>
 	</div>
 </template>
 
@@ -26,7 +28,7 @@ export default {
 	@import '~@/assets/styles/varibles.styl'
 	.header
 		display: flex
-		line-height: .86rem
+		line-height: $headerHight
 		background: $bgColor
 		color: #fff
 
@@ -56,7 +58,8 @@ export default {
 		width: 1.5rem
 		float: right
 		margin-left: 10px
-		/*text-align: center;*/
+		text-align: center;
+		color #fff
 		.arrow-icon
 			/*margin-left: -.05rem;*//*箭头往左移动*/
 			font-size: .25rem
