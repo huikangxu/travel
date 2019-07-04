@@ -66,7 +66,8 @@ export default {
         id: '0009',
         imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png',
         desc: '动植物园'
-      }]
+      }
+      ]
     };
   },
 
@@ -77,12 +78,14 @@ export default {
       const pages = []
       this.iconList.forEach((item,index)=>{
         const page = Math.floor(index/8) //计算某图在第几页
-        if(!pages[page]) {
-          pages[page] = []
+       if(!pages[page]) {
+          pages[page] = [];
+
         }
         pages[page].push(item)
       })
       return pages;
+
     }
   },
 
@@ -95,7 +98,7 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~@/assets/styles/varibles.styl'
-@import '~@/assets/styles/mixins.styl'
+@import '~styles/mixins.styl'
     .icons >>> .swiper-container //定义这个容器的样式，可以使整个模块轮播，而不只是icons一块
         overflow: hidden //有什么作用，加不加都可以：防止浮动？？
         height : 0
