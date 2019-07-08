@@ -1,7 +1,11 @@
 <!-- 城市列表字母模块 -->
 <template>
   <ul class="list" >
-      <li class="item" v-for="(item, key) of cities" :key="key">
+      <li class="item" 
+          v-for="(item, key) of cities" 
+          :key="key"
+          @click="handleLetterClick"
+      >
         {{key}}
       </li>
   </ul>
@@ -19,7 +23,12 @@ export default {
 
   //mounted: {},
 
-  methods: {}
+  methods: {
+    handleLetterClick (e) {
+      // console.log(e.target.innerText);
+      this.$emit('change', e.target.innerText)  //点击会触发change时间，由city监听这个事件
+    }
+  }
 }
 
 </script>
