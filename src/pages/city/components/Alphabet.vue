@@ -1,20 +1,18 @@
-<<!-- 城市列表字母模块 -->
+<!-- 城市列表字母模块 -->
 <template>
-  <div class="list">
-      <div class="item">A</div>
-      <div class="item">A</div>
-  </div>
+  <ul class="list" >
+      <li class="item" v-for="(item, key) of cities" :key="key">
+        {{key}}
+      </li>
+  </ul>
 </template>
 
 <script>
 export default {
   name: 'CityAlphabet',
-  data () {
-    return {
-
-    };
+  props: {
+    cities: Object
   },
-
   components: {},
 
   computed: {},
