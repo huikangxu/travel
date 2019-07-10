@@ -9,7 +9,7 @@
         <!-- 当前城市下的城市按钮 -->
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">北京</div>
+            <div class="button">{{this.currentCity}}</div>
           </div>
         </div>
       </div>
@@ -22,6 +22,7 @@
             class="button-wrapper" 
             v-for="item of hot"
             :key="item.id"
+            @click="handleClickCity(item.name)"
           >
             <div class="button">{{item.name}}</div>
           </div>
@@ -39,6 +40,7 @@
           <div class="item border-bottom"
               v-for="innerItem of item"
               :key="innerItem.id"
+              @click="handleClickCity(innerItem.name)"
           >{{innerItem.name}}</div>
         </div>
       </div>
@@ -48,6 +50,7 @@
 
 <script>
 import Bscroll from "better-scroll"
+import { mapState, mapMutations } from 'vuex'
 export default {
   name: "CityList",
   props: {
@@ -55,7 +58,23 @@ export default {
     hot: Array,
     letter: String
   },
-
+  computed: {
+		...mapState({
+      currentCity: 'city'
+    })
+	},
+  methods: {
+    handleClickCity (city) {
+      // alert(city)
+      // this.$store.dispatch('changeCity', city) //改变city时，调用dispatch()，触发store中的actions中的changeCity，接收此处传的city
+      this.changeCity(city)  //vuex的mapMutations，比上面一行更简单
+      this.$router.push('./')
+   },
+   ...mapMutations(['changeCity'])
+    // handleClickCity (city) { //可直接通过commit调用mutations，但是不行是为什么？？
+    //   this.$store.commit('changeCity',city)
+    // }
+  },
   mounted() {
     this.scroll = new Bscroll(this.$refs.wrapper)
   },

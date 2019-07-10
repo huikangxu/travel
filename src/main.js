@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import fastClick from 'fastClick' //引入fastClick,解决小程序端click延迟300ms的问题
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import store from './store'
+
 import './assets/styles/reset.css' //引入基础样式reset.css文件
 import './assets/styles/border.css' 
 import './assets/styles/iconfont.css'
@@ -18,6 +20,7 @@ Vue.use(VueAwesomeSwiper, /* { default global options } */) //轮播图插件，
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'
