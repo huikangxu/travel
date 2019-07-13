@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <!-- 包裹<router-view>路由的内容，使得加载城市页面的ajax只一次 --> 
-    <keep-alive> 
+    <keep-alive exclude="Detail"> 
+      <!-- exclude="Deatil"：即Detail不做缓存，其他页面做缓存 -->
       <!-- <img src="./assets/logo.png"> -->
       <router-view />
       <!-- 显示的是当前路由地址索对应的内容 -->
